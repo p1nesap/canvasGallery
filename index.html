@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LocalStorage Fun</title>
+
+<style>
+body {
+font-family: Sans-Serif;
+font-size: medium;
+}
+</style>
+
+</head>
+
+<body>
+</br>
+</br>
+</br>
+<form action="#">
+
+Link:
+<input type="text" name="item" id="idItem" value="" onClick="this.select();"/>
+<br><br>
+Blurb:
+<input type="text" name="blurb" id="idBlurb" value="" onClick="this.select();"/>
+<br><br>
+<input type="button" id="btn" name="submit" value="Load" />
+</form>
+
+<script type="application/javascript">
+
+	document.getElementById('btn').onclick = function() {
+		var val = document.getElementById('idItem').value;
+		var valBlurb = document.getElementById('idBlurb').value;
+		
+    src = val,
+		img = document.createElement('img');
+		img.src = src; // most recent image
+		document.body.appendChild(img); //most recent image
+/*
+		var br = document.createElement('br'); //trying line break to put Blurb below img
+		element.appendChild(br);
+*/
+		document.getElementById('caption').innerHTML = document.getElementById('idBlurb').value; //most recent blurb
+
+		localStorage.setItem('idBlurb', valBlurb);
+		localStorage.setItem("idItem", val);
+		
+		imgStore = localStorage.getItem("idItem");
+		blurbStore = localStorage.getItem("idBlurb");
+		img1 = document.createElement('img1');
+		img1.src = imgStore; //stored image
+		blurbStore.src = blurbStore;
+
+		document.body.appendChild(img1); localStorage images
+/*
+var br = document.createElement('br');
+		element.appendChild(br);
+*/
+		document.getElementById('caption2').innerHTML = document.getElementById('blurbStore'); //localStorage blurbs
+        }
+
+</script>
+
+<h4 id = 'caption'></h4>
+<br><br>
+<p id = 'caption2'></p> //this doesn't seem to be working.
+
+</body>
+
+</html>

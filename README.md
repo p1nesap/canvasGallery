@@ -1,1 +1,1 @@
-Set image urls and text fields (image captions to appear below image) from form into localStorage, and put many image/captions on the page, preferably tiled to specific dimension (use canvas)? 
+Using HTML5 canvas to create form-submitted image gallery (with captions) in tile fashion on page, with goal of storing URLs/captions in localStorage, to populate page with images from previous form submits.  

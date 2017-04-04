@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>2</title>
+<title>canvasGallery</title>
 
 <style>
 body {
@@ -10,15 +10,12 @@ font-size: medium;
 }
 </style>
 
-
-
 </head>
 
 <body>
+</br>
+</br>
 
-</br>
-</br>
-</br>
 <form action="#">
 
 Link:
@@ -41,10 +38,14 @@ function sendVal(form) {
 	
 	imgLink = document.getElementById("idImg").value;
 	desLink = document.getElementById("idDes").value;
+	
+	//how to integrate localStorage so each previous form-submit URL image/caption gets tiled on page? 
 	localStorage.setItem("idImg", imgLink);	
 	localStorage.setItem("idDes", desLink);
 	imgStore = localStorage.getItem("idImg");
 	desStore = localStorage.getItem("idDes");
+	
+	
 	draw();
 }
 
@@ -54,7 +55,7 @@ function draw(){
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
 
-    var tileWidth = 100;
+    var tileWidth = 100; //
     var tileWCount = 5;
     var multi = 2;
     var imgA = [];
@@ -68,7 +69,7 @@ function draw(){
 
 	src.push(imgLink); //works
 	
-	src.push(ctx.fillText(desLink, 5, 250));
+	src.push(ctx.fillText(desLink, 5, 250)); // need each caption under its image, without taking up tileWidth space.
 
     for(var i=0; i < tileWCount; i++){
         var img = new Image();
@@ -81,10 +82,7 @@ function draw(){
     }
 }
 
-
-
 </script>
-
 
 </body>
 
